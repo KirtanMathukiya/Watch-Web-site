@@ -1,0 +1,87 @@
+body{
+  background-image: linear-gradient(to right, #0b3e27, #197149); /* Gradient from Blue to Purple */
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+
+.navbar{
+  background-color: black;
+}
+
+.navbar .container{
+  height: auto;
+}
+
+.animateIt {
+  animation: fadeInUp 5s ease-out;
+}
+
+.animateIt p {
+  animation: slideInLeft 2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-section .container, .main{
+  background-image: url("img/button.png");
+  background-size: cover; /* This property ensures the background image covers the entire container */
+  background-position: 50%; 
+  font-weight: bold;
+  text-align: center;
+}
+
+.aboutRolex {
+  background-image: url("img/button.png");
+  background-size: cover; /* This property ensures the background image covers the entire container */
+  background-position: 50%;
+}
+
+.highlightBox {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px #113a1a;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 1s;
+}
+
+.section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#product-showcase a{
+  margin-left: 135px;
+}
+
+.nav-item:hover{
+  color: blue;
+  font-size: 1.1em;
+}
+

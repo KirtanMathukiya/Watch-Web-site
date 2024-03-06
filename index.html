@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolex - Timeless Luxury Watches</title>
+  <link rel="stylesheet" href="task3.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/logo2.png" alt="Rolex Logo" class="center-logo" width="100px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon bg-light"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item pe-2">
+              <a class="nav-link text-light" href="#collections">Collections</a>
+            </li>
+            <li class="nav-item pe-2">
+              <a class="nav-link text-light" href="#about">About</a>
+            </li>
+            <li class="nav-item pe-2">
+              <a class="nav-link text-light" href="#contact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                  <path d="M8 14s-6-4-6-8a4 4 0 1 1 8 0c0 2.344-1.437 4-4 4zM4 2a5 5 0 1 0 8 0c0 1.833-1.125 3.625-3 3.625S4 3.833 4 2z"/>
+                </svg> Favourite
+              </a>
+            </li>
+            <li class="nav-item pe-2">
+              <a class="nav-link text-light" href="#store">
+                <svg viewBox="0 0 15 15" fill="currentColor" width="25" height="25"><path d="M7.5,0.5c-3,0-5.4,2.4-5.4,5.4c0,1.1,0.7,2.6,1.7,4c1.7,2.3,3.7,4.6,3.7,4.6s2-2.4,3.7-4.6  c0.9-1.4,1.7-2.9,1.7-4C12.9,2.9,10.5,0.5,7.5,0.5z M7.5,8.4C6.1,8.4,5,7.2,5,5.9c0-1.4,1.1-2.5,2.5-2.5S10,4.5,10,5.9  S8.9,8.4,7.5,8.4z"></path></svg>
+                Store Locator
+              </a>
+            </li>
+            <li class="nav-item pe-2">
+              <a class="nav-link text-light" href="#">Help</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section animateIt py-2 text-light">
+    <div class="container text-center p-1">
+      <h1 class="highlightBox">Discover Timeless Luxury</h1>
+      <p class="lead">Explore our exquisite collection of Rolex watches, crafted with precision and elegance.</p>
+      <a href="#collections" class="btn btn-primary btn-lg">View Collections</a>
+    </div>
+  </div>  
+
+  <!-- Collections Section -->
+  <section id="collections" class="animateIt mt-2 px-5 text-light">
+    <div class="">
+      <h2 class="highlightBox main text-center pb-3">Our Collections</h2>
+      <div class="row">
+        <!-- Collection 1: Submariner -->
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="img/r5.png" class="card-img-top" alt="Rolex Submariner">
+            <div class="card-body">
+              <h4 class="card-title text-center text-dark">Submariner</h4>
+              <p class="card-text text-center text-dark">The iconic dive watch, known for its timeless design and exceptional performance.</p>
+              <a href="#" class="btn btn-primary d-block mx-auto">Explore</a>
+            </div>
+          </div>
+        </div>
+        <!-- Collection 2: Datejust -->
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="img/r6.png" class="card-img-top" alt="Rolex Datejust">
+            <div class="card-body">
+              <h4 class="card-title text-center text-dark">Datejust</h4>
+              <p class="card-text text-center text-dark">A classic symbol of style and prestige, featuring the iconic date window.</p>
+              <a href="#" class="btn btn-primary d-block mx-auto">Explore</a>
+            </div>
+          </div>
+        </div>
+        <!-- Collection 3: Daytona -->
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="img/r7.png" class="card-img-top" alt="Rolex Daytona">
+            <div class="card-body">
+              <h4 class="card-title text-center text-dark">Daytona</h4>
+              <p class="card-text text-center text-dark">The ultimate racing chronograph, designed for speed and precision.</p>
+              <a href="#" class="btn btn-primary d-block mx-auto">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="virtual-try-on" class="section text-light pt-2">
+    <div class="container">
+      <h2 class="highlightBox main text-center pb-3">Virtual Try-On</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-center">Select a Rolex Watch to Try On</h3>
+          <div id="watch-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/r1.png" class="d-block w-100" alt="Rolex Watch 1">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r5.png" class="d-block w-100" alt="Rolex Watch 2">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r6.png" class="d-block w-100" alt="Rolex Watch 3">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r7.png" class="d-block w-100" alt="Rolex Watch 4">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r8.png" class="d-block w-100" alt="Rolex Watch 5">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r9.png" class="d-block w-100" alt="Rolex Watch 6">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r10.png" class="d-block w-100" alt="Rolex Watch 7">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r11.png" class="d-block w-100" alt="Rolex Watch 8">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r12.png" class="d-block w-100" alt="Rolex Watch 9">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r13.png" class="d-block w-100" alt="Rolex Watch 10">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r14.png" class="d-block w-100" alt="Rolex Watch 11">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r15.png" class="d-block w-100" alt="Rolex Watch 12">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r16.png" class="d-block w-100" alt="Rolex Watch 13">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r17.png" class="d-block w-100" alt="Rolex Watch 14">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r18.png" class="d-block w-100" alt="Rolex Watch 15">
+              </div>
+              <div class="carousel-item">
+                <img src="img/r19.png" class="d-block w-100" alt="Rolex Watch 16">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#watch-carousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#watch-carousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3 class="text-center">Virtual Try-On</h3>
+          <div id="virtual-try-on-container" class="text-center">
+            <!-- This is where the virtual try-on functionality will be implemented -->
+            <img id="virtual-try-on-image" src="img/r10.png" alt="Virtual Try-On Image" class="img-fluid w-100">
+            <button id="try-on-button" class="btn btn-primary mt-3">Try On</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase Section -->
+  <section id="product-showcase" class="section pt-2">
+    <div class="container">
+      <h2 class="highlightBox main text-center pb-3">Product Showcase</h2>
+      <div class="row">
+        <!-- Add animation to product showcase -->
+        <div class="col-md-4">
+          <div class="card image-card">
+            <img src="img/r11.png" class="card-img-top" alt="Rolex Watch 1">
+            <div class="card-body">
+              <h5 class="card-title text-dark text-center">Rolex Watch 1</h5>
+              <p class="card-text text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet sapien nec nunc tincidunt consequat.</p>
+              <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card  image-card">
+            <img src="img/r12.png" class="card-img-top" alt="Rolex Watch 2">
+            <div class="card-body">
+              <h5 class="card-title text-dark text-center">Rolex Watch 2</h5>
+              <p class="card-text text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet sapien nec nunc tincidunt consequat.</p>
+              <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more product cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <!-- About Section -->
+  <section id="about" class="section pt-2 text-light text-center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/18XnJ2J-NsI?autoplay=1&loop=1&playlist=18XnJ2J-NsI" frameborder="0" allowfullscreen></iframe>
+    <div class="container">
+      <h2 class="highlightBox main text-center pb-3">About Rolex</h2>
+      <p class="lead text-center">Since 1905, Rolex has been synonymous with luxury, innovation, and precision. Every Rolex watch tells a story of excellence and craftsmanship, making it a symbol of achievement and success.</p>
+      <div class="row">
+        <div class="aboutRolex col-6">
+          <h3>Our History</h3>
+          <p>Rolex was founded in 1905 by Hans Wilsdorf and Alfred Davis in London. Over the years, Rolex has established itself as a pioneer in the watchmaking industry, introducing numerous innovations such as the first waterproof wristwatch, the Oyster, in 1926, and the first self-winding wristwatch, the Perpetual, in 1931.</p>
+        </div>
+        <div class="aboutRolex col-6">
+          <h3>Our Values</h3>
+          <p>At Rolex, we are committed to upholding the highest standards of quality, craftsmanship, and innovation. Our watches are meticulously crafted by skilled artisans using the finest materials, ensuring unparalleled durability and precision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <div id="contact" class="section py-2 text-light">
+    <div class="container">
+      <h2 class="highlightBox main text-center pb-3">Contact Us</h2>
+      <p class="lead text-center">For inquiries and assistance, please feel free to contact us:</p>
+      <ul class="list-unstyled text-center">
+        <li>Email: <a href="mailto:info@rolex.com">info@rolex.com</a></li>
+        <li>Phone: 1-800-ROLEX</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Store Locator Section -->
+  <div id="store" class="section pb-2 text-light">
+    <div class="container">
+      <h2 class="highlightBox main text-center pb-3">Store Locator</h2>
+      <p class="lead text-center">Find a Rolex authorized retailer near you and explore our collection in person:</p>
+      <iframe src="https://www.google.com/maps/embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="footer bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+      <!-- About Us -->
+      <div class="col-md-4 mb-4">
+        <h5>About Us</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis risus sit amet justo sagittis, vel aliquam felis semper.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="currentColor" width="30" height="30"><path d="m10.86 0h-6.72c-2.28 0-4.14 1.86-4.14 4.14v6.72c0 2.28 1.86 4.14 4.14 4.14h6.72c2.28 0 4.14-1.86 4.14-4.14v-6.72c0-2.28-1.86-4.14-4.14-4.14zm0 13.67h-6.72c-1.55 0-2.81-1.26-2.81-2.81v-6.72c0-1.55 1.26-2.81 2.81-2.81h6.72c1.55 0 2.81 1.26 2.81 2.81v6.72c0 1.55-1.26 2.81-2.81 2.81zm-3.36-10.13c-2.13 0-3.87 1.73-3.87 3.87 0 2.13 1.73 3.86 3.87 3.86 2.13 0 3.87-1.73 3.87-3.86 0-2.14-1.74-3.87-3.87-3.87zm0 6.4c-1.4 0-2.53-1.14-2.53-2.53 0-1.4 1.14-2.53 2.53-2.53s2.53 1.14 2.53 2.53-1.13 2.53-2.53 2.53zm4.72-7.25c.18.18.29.43.29.69s-.1.51-.29.69c-.18.18-.43.29-.69.29s-.51-.1-.69-.29c-.18-.18-.29-.43-.29-.69s.1-.51.29-.69c.18-.18.43-.29.69-.29.25.01.51.11.69.29z"></path></svg></a></li>
+          <li class="list-inline-item"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="currentColor" width="30" height="30"><path d="m11.5 0v2.25h-2.93c-.31 0-.57.32-.57.63v1.62h3.25l-.61 2.25h-2.64v8.25h-2.25v-8.25h-2.25v-2.25h2.25v-1.75c0-1.59 1.17-2.75 2.75-2.75z"></path></svg></a></li>
+          <li class="list-inline-item"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="currentColor" width="30" height="30"><path d="m12.19 1.88h-9.38c-1.54 0-2.81 1.26-2.81 2.81v5.62c0 1.55 1.27 2.81 2.81 2.81h9.37c1.55 0 2.81-1.27 2.81-2.81v-5.62c.01-1.55-1.26-2.81-2.8-2.81zm-6.57 9.37v-7.5l4.69 3.75z"></path></svg></a></li>
+        </ul>
+      </div>
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light">Collections</a></li>
+          <li><a href="#" class="text-light">About Us</a></li>
+          <li><a href="#" class="text-light">Contact Us</a></li>
+          <li><a href="#" class="text-light">Store Locator</a></li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div class="col-md-4">
+        <h5>Subscribe to Our Newsletter</h5>
+        <form>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="button" id="button-addon2">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="task3.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
