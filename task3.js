@@ -1,5 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-  
+  // Get a reference to the "View Collections" button
+  const viewCollectionsBtn = document.querySelector('.hero-section .btn');
+
+  // Add click event listener to the button
+  viewCollectionsBtn.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default behavior of the anchor tag
+
+    // Redirect to the gallery page
+    window.location.href = 'gallery.html';
+  });
+
+
   const sections = document.querySelectorAll('.section');
 
   function checkScroll() {
