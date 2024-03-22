@@ -5,6 +5,9 @@ body {
   font-weight: bold;
   color: white;
   margin: 0;
+}
+
+.bodypart{
   animation: background-gradient 15s ease-in-out infinite;
   background-image: radial-gradient(circle at center, #ff9999, #66b3ff);
 }

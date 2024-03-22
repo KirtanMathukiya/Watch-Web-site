@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function updateFavoritesList() {
-    const favoritesContainer = document.querySelector('.favorites-container');
+    const favoritesContainer = document.querySelector('.favorites');
     favoritesContainer.innerHTML = '';
     
     const favorites = getFavorites();
@@ -80,10 +80,10 @@ document.addEventListener("DOMContentLoaded", function() {
     favorites.forEach(watch => {
       const favoriteItem = document.createElement('div');
       favoriteItem.classList.add('favorite-item');
-      favoriteItem.innerHTML = `
+      favoriteItem.innerHTML =`
         <h3>${watch.name}</h3>
         <p>${watch.price}</p>
-        <img src="${watch.image}" alt="${watch.name}">
+        <img src="${watch.image}" alt="${watch.name}" width="100px" height="200px">
         <button class="remove-btn">Remove</button>
       `;
       
