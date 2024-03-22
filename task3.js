@@ -32,9 +32,10 @@ document.addEventListener("DOMContentLoaded", function() {
   likeButtons.forEach(button => {
     button.addEventListener('click', function() {
       const watch = this.parentElement.parentElement;
-      const imageElement = watch.querySelector('img');  // Find the image element within the watch
-      const imageUrl = imageElement ? imageElement.src : '';  // Extract src attribute or set empty string if not found
-
+      // Get the value of the background-image URL from the style attribute
+      const backgroundImageUrl = watch.style.backgroundImage;
+      // Extract the URL from the style attribute value
+      const imageUrl = backgroundImageUrl.replace(/^url\(['"](.+)['"]\)$/, '$1');
       const watchDetails = {
         name: watch.querySelector('h3').textContent,
         price: watch.querySelector('p').textContent,
