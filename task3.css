@@ -1,4 +1,4 @@
-body{
+body {
   background-image: linear-gradient(to right, #0b3e27, #197149); /* Gradient from Blue to Purple */
   background-size: cover;
   background-position: center;
@@ -7,62 +7,17 @@ body{
   margin: 0;
 }
 
-
-.navbar{
+.navbar {
   background-color: black;
 }
 
-.navbar .container{
+.navbar .container {
   height: auto;
-}
-
-.animateIt {
-  animation: fadeInUp 5s ease-out;
-}
-
-.animateIt p {
-  animation: slideInLeft 2s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-section .container, .main{
-  background-image: url("button.png");
-  background-size: cover; /* This property ensures the background image covers the entire container */
-  background-position: 50%; 
-  font-weight: bold;
-  text-align: center;
-}
-
-.aboutRolex {
-  background-image: url("button.png");
-  background-size: cover; /* This property ensures the background image covers the entire container */
-  background-position: 50%;
 }
 
 .highlightBox {
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px #113a1a;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .section {
@@ -76,53 +31,104 @@ body{
   transform: translateY(0);
 }
 
-#product-showcase a{
+#product-showcase a {
   margin-left: 135px;
 }
 
-.nav-item:hover{
+.nav-item:hover {
   color: blue;
   font-size: 1.1em;
 }
 
 .gallery {
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
 .watch {
-  position: relative;
+  flex: 0 0 auto;
+  width: 300px;
+  height: 200px;
+  margin-right: 20px;
+  background-size: cover;
+  scroll-snap-align: start;
   cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.watch img {
-  width: 200px;
-  height: auto;
   transition: transform 0.3s;
+  position: relative;
 }
 
-.watch:hover img {
-  transform: scale(1.1);
+.watch:hover {
+  transform: scale(1.05);
 }
 
-.details {
+.watch-details {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 10px;
-  border-radius: 0 0 5px 5px;
-  transform: translateY(100%);
-  transition: transform 0.3s;
+  width: 100%;
+  color: #fff;
+  text-align: center;
   opacity: 0;
+  transition: opacity 0.3s;
 }
 
-.watch:hover .details {
-  transform: translateY(0);
+.watch:hover .watch-details {
   opacity: 1;
 }
 
+.watch-details h3 {
+  margin: 5px 0;
+}
+
+.watch-details p {
+  margin: 0;
+}
+
+.like-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.like-btn svg {
+  fill: white;  /* Adjust fill color as needed */
+}
+
+.like-btn svg:hover {
+  fill: red;  /* Adjust fill color as needed */
+}
+
+.liked .like-btn svg {
+  fill: red;  /* Adjust fill color for liked state */
+}
+
+
+.favorites-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.favorite-item {
+  width: 45%;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.favorite-item img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.remove-btn {
+  background-color: transparent
+}

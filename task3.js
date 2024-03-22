@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Smooth scrolling to watch on click
+  const watches = document.querySelectorAll('.watch');
+  watches.forEach(watch => {
+    watch.addEventListener('click', () => {
+      watch.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Animated sections (optional - uncomment if needed)
   
   const sections = document.querySelectorAll('.section');
 
@@ -15,28 +24,90 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener('scroll', checkScroll);
   
-  // Get references to DOM elements
-  const watchCarousel = document.getElementById("watch-carousel");
-  const virtualTryOnContainer = document.getElementById("virtual-try-on-container");
 
-  // Add event listener to the "Try On" button
-  document.getElementById("try-on-button").addEventListener("click", function() {
-    // Get the currently active carousel item
-    const activeItem = watchCarousel.querySelector(".carousel-item.active img");
-    
-    // Set the src attribute of the virtual try-on image to the selected watch image
-    virtualTryOnContainer.querySelector("img").src = activeItem.src;
+  // Favorite Watches Feature
+
+  const likeButtons = document.querySelectorAll('.like-btn');
+
+  likeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const watch = this.parentElement.parentElement;
+      const imageElement = watch.querySelector('img');  // Find the image element within the watch
+      const imageUrl = imageElement ? imageElement.src : '';  // Extract src attribute or set empty string if not found
+
+      const watchDetails = {
+        name: watch.querySelector('h3').textContent,
+        price: watch.querySelector('p').textContent,
+        image: imageUrl  // Update image property
+      };
+      
+      toggleFavorite(watch, watchDetails);
+    });
   });
 
-  // JavaScript for image slider with fade animations
-  const images = document.querySelectorAll('.card.image-card img');
-  let index = 0;
-
-  function showImage() {
-    images.forEach(image => image.classList.remove('active'));
-    images[index].classList.add('active');
-    index = (index + 1) % images.length;
+  function toggleFavorite(watch, watchDetails) {
+    const favorites = getFavorites();
+    const isFavorite = favorites.find(fav => fav.name === watchDetails.name);
+    
+    if (isFavorite) {
+      favorites.splice(favorites.indexOf(isFavorite), 1);
+      watch.classList.remove('liked');
+    } else {
+      favorites.push(watchDetails);
+      watch.classList.add('liked');
+    }
+    
+    storeFavorites(favorites);
+    updateFavoritesList();
   }
 
-  setInterval(showImage, 3000); // Change image every 3 seconds
+  function getFavorites() {
+    const favorites = localStorage.getItem('favoriteWatches');
+    return favorites ? JSON.parse(favorites) : [];
+  }
+  
+  function storeFavorites(favorites) {
+    localStorage.setItem('favoriteWatches', JSON.stringify(favorites));
+  }
+
+  function updateFavoritesList() {
+    const favoritesContainer = document.querySelector('.favorites-container');
+    favoritesContainer.innerHTML = '';
+    
+    const favorites = getFavorites();
+    
+    favorites.forEach(watch => {
+      const favoriteItem = document.createElement('div');
+      favoriteItem.classList.add('favorite-item');
+      favoriteItem.innerHTML = `
+        <h3>${watch.name}</h3>
+        <p>${watch.price}</p>
+        <img src="${watch.image}" alt="${watch.name}">
+        <button class="remove-btn">Remove</button>
+      `;
+      
+      favoritesContainer.appendChild(favoriteItem);
+    });
+  }
+
+  // Call updateFavoritesList on page load to display any existing favorites
+  updateFavoritesList();
+
+  // Functionality for remove button in favorite items
+  const removeBtns = document.querySelectorAll('.remove-btn');
+  removeBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const favoriteItem = this.parentElement;  // Get the favorite item element
+      const watchName = favoriteItem.querySelector('h3').textContent;
+      
+      const favorites = getFavorites();
+      const watchIndex = favorites.findIndex(fav => fav.name === watchName);
+      
+      if (watchIndex > -1) {
+        favorites.splice(watchIndex, 1);
+        storeFavorites(favorites);
+        updateFavoritesList();
+      }
+    });
+  });
 });
