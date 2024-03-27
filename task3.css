@@ -67,6 +67,7 @@ body {
 .watch {
   /* Set a fixed size for watches */
   width: 250px; /* Adjust as needed */
+  height: 250px; /* Adjust as needed */
   margin: 10px;
   background-size: cover;
   background-position: center;
@@ -125,6 +126,18 @@ body {
   fill: red;  /* Adjust fill color for liked state */
 }
 
+/* Style the watch items */
+.favwatch {
+  /* Set a fixed size for watches */
+  width: 250px; /* Adjust as needed */
+  margin: 10px;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer; /* Add hover effect (optional) */
+}
 
 .favorites-container {
   display: flex;
