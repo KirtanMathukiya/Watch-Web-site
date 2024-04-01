@@ -126,6 +126,18 @@ body {
   fill: red;  /* Adjust fill color for liked state */
 }
 
+/* Style the watch items */
+.favwatch {
+  /* Set a fixed size for watches */
+  width: 250px; /* Adjust as needed */
+  margin: 10px;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer; /* Add hover effect (optional) */
+}
 
 .favorites-container {
   display: flex;
@@ -134,8 +146,8 @@ body {
 }
 
 .favorite-item {
-  width: 45%;
-  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
   text-align: center;
   border: 1px solid #ddd;
   padding: 10px;
@@ -145,6 +157,14 @@ body {
 .favorite-item img {
   width: 100%;
   margin-bottom: 10px;
+}
+
+.favsize{
+  font-size: 1.8em;
+}
+
+.favbutton:hover{
+  opacity: 0.5;
 }
 
 .remove-btn {
