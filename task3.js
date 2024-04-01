@@ -48,12 +48,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function toggleFavorite(watch, watchDetails) {
     const favorites = getFavorites();
-    const isFavorite = favorites.find(fav => fav.name === watchDetails.name);
+    const existingFavorite = favorites.find(fav => fav.name === watchDetails.name);
     
-    if (isFavorite) {
-      favorites.splice(favorites.indexOf(isFavorite), 1);
+    if (existingFavorite) {
+      // Watch already favorited, remove it
+      favorites.splice(favorites.indexOf(existingFavorite), 1);
       watch.classList.remove('liked');
     } else {
+      // New favorite, add it to the list
       favorites.push(watchDetails);
       watch.classList.add('liked');
     }
@@ -61,11 +63,13 @@ document.addEventListener("DOMContentLoaded", function() {
     storeFavorites(favorites);
     updateFavoritesList();
   }
+  
 
   function getFavorites() {
     const favorites = localStorage.getItem('favoriteWatches');
-    return favorites ? JSON.parse(favorites) : [];
+    return favorites ? JSON.parse(favorites) : []; // Return empty array if no favorites
   }
+  
   
   function storeFavorites(favorites) {
     localStorage.setItem('favoriteWatches', JSON.stringify(favorites));
