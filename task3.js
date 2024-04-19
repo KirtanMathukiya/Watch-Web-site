@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Smooth scrolling to watch on click (unchanged)
-  const watches = document.querySelectorAll('.watch');
-  watches.forEach(watch => {
-    watch.addEventListener('click', () => {
-      watch.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const sections = document.querySelectorAll('.section');
+
+  function checkScroll() {
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (sectionTop < windowHeight * 0.75) {
+        section.classList.add('animate');
+      }
     });
-  });
+  }
+
+  window.addEventListener('scroll', checkScroll);
 
   // Animated sections (optional - unchanged)
 
