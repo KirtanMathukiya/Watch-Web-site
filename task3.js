@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateFavoritesList() {
     const favoritesContainer = document.querySelector('.favorites');
-    favoritesContainer.innerHTML = '';
+    favoritesContainer.innerHTML = " ";
 
     const favorites = getFavorites();
 
